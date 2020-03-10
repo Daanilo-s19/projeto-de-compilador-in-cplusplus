@@ -1,12 +1,8 @@
-#include <stdio.h>
 #include <iostream>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string>
-#include <list>
-#include "lexico.cpp"
-#include "sintatico.cpp"
+#include <fstream>
+#include "lexico.h"
+#include "sintatico.h"
+//#include "sintatico.cpp"
 
 using namespace std;
 
@@ -14,36 +10,24 @@ using namespace std;
 int main()
 {
 
-    FILE *arq;
-    char Linha[100];
-    char *str;
-    list<pair<Token, string>> tokens;
-    int i;
-
-    arq = fopen("teste.txt", "rt");
-    if (arq == NULL) // Se houve erro na abertura
+    ifstream arq("teste.txt");
+    if (!arq.is_open())
     {
-        printf("Problemas na abertura do arquivo\n");
-        return 0;
+        cout << "DEU RUIM\n";
+        return EXIT_FAILURE;
     }
-    i = 1;
-    while (!feof(arq))
+    try
     {
-        str = fgets(Linha, 100, arq);
-
-        tokens = token(str);
-
-        i++;
+        auto tokens = getTokens(arq);
+        syntatic(tokens);
     }
-    fclose(arq);
-
-    for (const auto &p : tokens)
+    catch (exception &e)
     {
-        std::cout << p.first << ", " << p.second << std::endl;
-        // or std::cout << std::get<0>(p) << ", " << std::get<1>(p) << std::endl;
+        cout << e.what() << '\n';
+        return 1;
     }
-    // syntatic(tokens);
-
-    getchar();
-    return (0);
+    cin.get();
+    return 0;
 }
+//g++ *.cpp -g
+// ./a.exe

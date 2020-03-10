@@ -1,8 +1,8 @@
 #pragma once
-#include <string>
 enum Token
 {
-    ABRE_PARENTESE,
+    // terminais
+    ABRE_PARENTESE = -17,
     FECHA_PARENTESE,
     INTEIRO,
     QUEBRADO,
@@ -18,6 +18,13 @@ enum Token
     ENQUANTO,
     ACABOU,
     FACA,
-    erro
+    $,
+
+    // Não terminal
+    PROGRAMA,
+    BLOCO,
+    CMD,
+    EXPRESSAO,
+    EXP_LOGICA,
 
 };
