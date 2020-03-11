@@ -36,15 +36,15 @@ Token r_words(const string &str)
     }
     else if (str == "INTEIRO")
     {
-        return Token::INTEIRO;
+        return Token::TIPO;
     }
     else if (str == "QUEBRADO")
     {
-        return Token::QUEBRADO;
+        return Token::TIPO;
     }
     else if (str == "LOGICO")
     {
-        return Token::LOGICO;
+        return Token::TIPO;
     }
     return Token::ID;
 }
@@ -64,7 +64,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
 
     while (!file.eof())
     {
-        cout << '{' << estado << ", " << c << "}\n";
+        // cout << '{' << estado << ", " << c << "}\n";
         switch (estado)
         {
         case 0:
@@ -73,63 +73,62 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             {
             case '=':
                 subString += c;
-                estado = 1;
+                estado = 1; // ATRIBUIÇÃO
                 break;
             case '+':
             case '-':
             case '*':
             case '/':
                 subString += c;
-                estado = 2;
+                estado = 2; //OPERACAO ARITMETICA
                 break;
             case ';':
                 subString += c;
-                estado = 3;
+                estado = 3; // PONTO E VIRGULA
                 break;
             case '(':
                 subString += c;
-                estado = 4;
+                estado = 4; // ABRE PARENTESE
                 break;
             case ')':
                 subString += c;
-                estado = 5;
+                estado = 5; //FECHA PARENTESE
                 break;
             case '&':
             case '|':
-            case '!':
             case '<':
             case '>':
                 subString += c;
-                estado = 8;
+                estado = 8; // OPERECAO LOGICA
+                break;
+            case '!':
+                std::cout << "NEGAÇÃO\n";
+                groupTokens.push_back(make_pair(Token::NEGACAO, subString));
+                resetaEstado(estado, subString);
                 break;
             case EOF:
-                cout << "acabou\n";
+                cout << "acabou\n"; // FIM DE ARQ
                 groupTokens.push_back(make_pair(Token::$, ""));
                 break;
 
             default:
 
-                if (isalpha(c))
-                {
-
-                    // if (isspace(str[prox_char]) || str[prox_char] == ';')
-                    // {
-                    //     subString += c;
-                    subString += c;
-                    estado = 6;
-                    // }
-                }
-                else if (isdigit(c))
+                if (isalpha(c)) // SE FOR CARACTERE
                 {
                     subString += c;
-                    estado = 7;
+                    estado = 6; // ESTADO DE VERIFICAÇÃO DO PROXIMO CHAR PRA DEFINIÇÃO DO LEXEMA
                 }
-                else if (isspace(c))
+                else if (isdigit(c)) //SE FOR DIGITO
+                {
+                    subString += c;
+                    estado = 7; // ESTADO DE VERIFICAÇÃO DO PROXIMO CHAR DO LEXEMA
+                }
+                else if (isspace(c)) // SE FOR ESPAÇO BREAK E PROXIMO CHAR
                 {
                     break;
                 }
                 else
-                    throw invalid_argument("Oh deus");
+                    throw invalid_argument("INVALID");
 
                 break;
             }
@@ -138,55 +137,51 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             std::cout << "OPERADOR ATRIBUICAO\n";
             groupTokens.push_back(make_pair(Token::ATRIB, subString));
             resetaEstado(estado, subString);
-            //groupTokens += "ATRB ";
 
             break;
         case 2:
             std::cout << "OPERADOR ARITMETICO\n";
-            // groupTokens += "OPA ";
             groupTokens.push_back(make_pair(Token::OPA, subString));
             resetaEstado(estado, subString);
             break;
         case 3:
-            std::cout << "PONTO E VIRGULA\n";
+            std::cout << subString << "PONTO E VIRGULA\n";
             groupTokens.push_back(make_pair(Token::PNTVIRGULA, subString));
             resetaEstado(estado, subString);
             break;
         case 4:
-            cout << "Abre paresentesess\n";
-            groupTokens.push_back(make_pair(Token::ABRE_PARENTESE, "("));
+            cout << subString << "ABRE PARENTESE\n";
+            groupTokens.push_back(make_pair(Token::ABRE_PARENTESE, subString));
             resetaEstado(estado, subString);
             break;
         case 5:
-            cout << "Fecha parentese\n";
-            // groupTokens += "FECHA_PARENTESE ";
+            cout << subString << "FECHA PARENTESE\n";
             groupTokens.push_back(make_pair(Token::FECHA_PARENTESE, subString));
             resetaEstado(estado, subString);
             break;
         case 6:
         {
-            c = file.get();
-            if (!isalnum(c))
-                estado = 9;
+            c = file.get();  // VERIFICA O PROXIMO CARACTERE DO ARQUIVO
+            if (!isalnum(c)) // SE  NAO FOR UM DIGITO OU NUMERO SIGNIFICA QUE ACABOU A LEITURA DO LEXEMA
+                estado = 9;  // ESTADO DE VALIDACAO
             else
-                subString += c;
+                subString += c; // CONTINUA A LEITURA DO LEXEMA
         }
 
         break;
         case 7:
-            c = file.get();
-            if (c == ',')
+            c = file.get(); // VERIFICA O PROXIMO CARACTERE DO ARQUIVO
+            if (c == ',')   // SE FOR ','
             {
-                estado = 10;
+                estado = 10; // MANDA PARA O ESTADO 10  QUE ADICIONA NUMEROS
                 subString += c;
             }
             else if (!isdigit(c))
-                estado = 11;
+                estado = 11; // ESTADO QUE DETERMINA QUE É VALOR
 
             break;
         case 8:
-            std::cout << "OPERADOR LOGICO\n";
-            // groupTokens += "OPB ";
+            std::cout << subString << "OPERADOR LOGICO\n";
             groupTokens.push_back(make_pair(Token::OPB, subString));
             resetaEstado(estado, subString);
             break;
@@ -198,17 +193,15 @@ vector<pair<Token, string>> getTokens(ifstream &file)
                 cout << subString << ": PALAVRA RESERVADA" << '\n';
             else
                 cout << subString << ": ID" << '\n';
-
-            //groupTokens += subString + " ";
             groupTokens.push_back(make_pair(token, subString));
             resetaEstado(estado, subString);
         }
         break;
-        case 10:
+        case 10: // DEPOIS DA VIRGULA ESTADO 10  QUE ADICIONA NUMEROS
             c = file.get();
             if (isdigit(c))
             {
-                estado = 12;
+                estado = 12; // VALIDA QUE É UM VALOR
                 subString += c;
             }
             else
@@ -217,9 +210,8 @@ vector<pair<Token, string>> getTokens(ifstream &file)
                 throw invalid_argument("Man, manda um valor correto ai.");
             }
             break;
-        case 11:
+        case 11: // FINAL DA LEITURA DE VALOR
             std::cout << subString << ": VALOR" << '\n';
-            // groupTokens += "VALOR ";
             groupTokens.push_back(make_pair(Token::VALOR, subString));
             resetaEstado(estado, subString);
             break;
@@ -227,7 +219,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             c = file.get();
             if (!isdigit(c))
             {
-                estado = 13;
+                estado = 13; //VALIDA QUE É VALOR
             }
             else
             {

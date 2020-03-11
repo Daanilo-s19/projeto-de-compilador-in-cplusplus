@@ -1,6 +1,6 @@
 INTEIRO x ; 
 INTEIRO y ;
-x = 0 ;
+INTEIRO = 0 ;
 X = 2 ;
 ENQUANTO ( x > 0 ) FACA y = y + 10 ; 
 x = x - 1 ; SE 2 && 2 | 4;ACABOU ;

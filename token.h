@@ -4,9 +4,7 @@ enum Token
     // terminais
     ABRE_PARENTESE = -17,
     FECHA_PARENTESE,
-    INTEIRO,
-    QUEBRADO,
-    LOGICO,
+    TIPO,
     VALOR,
     ID,
     ATRIB,
@@ -18,6 +16,7 @@ enum Token
     ENQUANTO,
     ACABOU,
     FACA,
+    NEGACAO,
     $,
 
     // Não terminal

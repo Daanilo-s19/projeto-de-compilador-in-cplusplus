@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
 
-    ifstream arq("teste.txt");
+    ifstream arq("teste.txt"); // LEITURA DO ARQUIVO
     if (!arq.is_open())
     {
         cout << "DEU RUIM\n";
@@ -18,7 +18,7 @@ int main()
     }
     try
     {
-        auto tokens = getTokens(arq);
+        auto tokens = getTokens(arq); // RETORNO DOS TOKENS E SEUS RESPECTIVOS ENUM
         syntatic(tokens);
     }
     catch (exception &e)
