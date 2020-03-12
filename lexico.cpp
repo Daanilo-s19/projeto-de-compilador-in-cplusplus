@@ -111,7 +111,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             case '!':
                 std::cout << "NEGAÇÃO\n";
                 groupTokens.push_back(make_pair(Token::NEGACAO, subString));
-                salvarOutput(subString, string("NEGACAO"));
+                salvarOutput(string("!"), string("NEGACAO"));
                 resetaEstado(estado, subString);
                 break;
             case EOF:
