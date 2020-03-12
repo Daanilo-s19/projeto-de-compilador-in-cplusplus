@@ -1,6 +1,1 @@
-INTEIRO x ; 
-X >!2;
-X = 2 ;
-x = x - 1 ;
-SE 2 && 2,2 | 4;
-ACABOU ;
+INTEIRO x ;

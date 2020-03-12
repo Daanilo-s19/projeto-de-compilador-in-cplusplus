@@ -29,5 +29,6 @@ enum Token
     EXPLX,
     EXPAX,
     EXP_LOGICA,
+    ERRO,
 
 };

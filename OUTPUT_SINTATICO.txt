@@ -1,0 +1,370 @@
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
+<programa> -> cmd programax
+<cmd>->  atrib ‘;’
+<atrib> -> id “=” expressao
