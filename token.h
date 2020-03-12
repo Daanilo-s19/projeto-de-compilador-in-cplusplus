@@ -21,9 +21,13 @@ enum Token
 
     // Não terminal
     PROGRAMA,
+    PROGRAMAX,
     BLOCO,
     CMD,
     EXPRESSAO,
+    EXPL,
+    EXPLX,
+    EXPAX,
     EXP_LOGICA,
 
 };
