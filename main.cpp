@@ -18,8 +18,12 @@ int main()
     }
     try
     {
+        std::cout << "\n\n*ANALISE LEXICA*\n\n";
         auto tokens = getTokens(arq); // RETORNO DOS TOKENS E SEUS RESPECTIVOS ENUM
+
+        std::cout << "\n\n*ANALISE SINTATICA*\n\n";
         syntatic(tokens);
+        std::cout << "*\n\nFIM DA ANALISE SINTATICA*\n\n";
     }
     catch (exception &e)
     {

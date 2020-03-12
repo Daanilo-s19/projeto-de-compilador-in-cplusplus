@@ -14,7 +14,14 @@
 #include <stack>
 
 using namespace std;
+std::fstream fss;
 
+void salvarOutput(string output) // escrita no arquivo
+{
+    fss.open("OUTPUT_SINTATICO.txt", std::fstream::out | std::fstream::app);
+    fss << output << std::endl;
+    fss.close();
+}
 void syntatic(vector<pair<Token, string>> &tokens)
 {
 
@@ -52,25 +59,29 @@ void syntatic(vector<pair<Token, string>> &tokens)
         {
             //bateu
             cout << "parser: topo bateu com o token lido do lexico" << token << "==" << topo << '\n';
+            // salvarOutput(" PARSER: TOKEN = TOPO\n");
             ++index;
             pilha.pop();
         }
         else
         {
             auto regra = table[topo][token];
-
+            pilha.pop();
             switch (regra)
             {
             case 1: //PROGRAMA ->CMD PROGRAMA
                 pilha.push(Token::PROGRAMA);
                 pilha.push(Token::CMD);
+                salvarOutput("PROGRAMA ->CMD PROGRAMA");
                 break;
             case 2: //BLOCO -> PROGRAMA
                 pilha.push(Token::PROGRAMA);
+                salvarOutput("BLOCO -> PROGRAMA");
                 break;
             case 3: //CMD ->  ATRIB ';'
                 pilha.push(Token::PNTVIRGULA);
                 pilha.push(Token::ATRIB);
+                salvarOutput("CMD ->  ATRIB ';'");
                 break;
             case 4: //SE ->‘se‘ EXPRESSAO ‘faça’ BLOCO SENAO  ‘acabou’
                 pilha.push(Token::ACABOU);
@@ -79,6 +90,7 @@ void syntatic(vector<pair<Token, string>> &tokens)
                 pilha.push(Token::FACA);
                 pilha.push(Token::EXPRESSAO);
                 pilha.push(Token::SE);
+                salvarOutput("SE ->‘se‘ EXPRESSAO ‘faça’ BLOCO SENAO  ‘acabou’");
                 break;
             case 5: //ENQUANTO -> ‘enquanto’  EXPRESSAO ‘faça’ BLOCO  ‘acabou’
                 pilha.push(Token::ACABOU);
@@ -86,36 +98,44 @@ void syntatic(vector<pair<Token, string>> &tokens)
                 pilha.push(Token::FACA);
                 pilha.push(Token::EXPRESSAO);
                 pilha.push(Token::ENQUANTO);
+                salvarOutput("ENQUANTO -> ‘enquanto’  EXPRESSAO ‘faça’ BLOCO  ‘acabou’");
                 break;
             case 6: //ENTAO ->  ATRIB ';'
                 pilha.push(Token::BLOCO);
                 pilha.push(Token::ENTAO);
+                salvarOutput("ENTAO ->  ATRIB ';'");
                 break;
             case 7: //EXPRESSAO ->ID EXPL
                 pilha.push(Token::EXPRESSAO);
                 pilha.push(Token::ID);
+                salvarOutput("EXPRESSAO ->ID EXPL");
                 break;
             case 8: //EXPRESSAO ->VALOR EXPL
                 pilha.push(Token::EXPRESSAO);
                 pilha.push(Token::VALOR);
+                salvarOutput("EXPRESSAO ->VALOR EXPL");
                 break;
             case 9: //EXPRESSAO ->NEGACAO
                 pilha.push(Token::NEGACAO);
+                salvarOutput("EXPRESSAO ->NEGACAO");
                 break;
             case 10: // EXPRESSAO ->(EXPRESSAO) EXPL
                 pilha.push(Token::EXPRESSAO);
                 pilha.push(Token::FECHA_PARENTESE);
                 pilha.push(Token::EXPRESSAO);
                 pilha.push(Token::ABRE_PARENTESE);
+                salvarOutput("EXPRESSAO ->(EXPRESSAO) EXPL");
                 break;
             case 11: // ATRIB -> TIPO ID
                 pilha.push(Token::ID);
                 pilha.push(Token::TIPO);
+                salvarOutput("ATRIB -> TIPO ID");
                 break;
-            case 12: // ATRIB -> TIPO ID
+            case 12: // ATRIB ->  ID = expressao
                 pilha.push(Token::EXPRESSAO);
                 pilha.push(Token::ATRIB);
                 pilha.push(Token::ID);
+                salvarOutput("ATRIB ->  ID = expressao");
                 break;
             default:
 

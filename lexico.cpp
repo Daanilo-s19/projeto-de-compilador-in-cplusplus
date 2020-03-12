@@ -7,6 +7,7 @@
 #include "lexico.h"
 
 using namespace std;
+std::fstream fs;
 
 Token r_words(const string &str)
 {
@@ -53,6 +54,12 @@ void resetaEstado(int &estado, string &substr)
 {
     substr.clear();
     estado = 0;
+}
+void salvarOutput(string substr, string output) // escrita no arquivo
+{
+    fs.open("OUTPUT_LEXICO.txt", std::fstream::out | std::fstream::app);
+    fs << " [" << substr << "]" << output << std::endl;
+    fs.close();
 }
 
 vector<pair<Token, string>> getTokens(ifstream &file)
@@ -104,6 +111,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             case '!':
                 std::cout << "NEGAÇÃO\n";
                 groupTokens.push_back(make_pair(Token::NEGACAO, subString));
+                salvarOutput(subString, string("NEGACAO"));
                 resetaEstado(estado, subString);
                 break;
             case EOF:
@@ -136,27 +144,32 @@ vector<pair<Token, string>> getTokens(ifstream &file)
         case 1:
             std::cout << "OPERADOR ATRIBUICAO\n";
             groupTokens.push_back(make_pair(Token::ATRIB, subString));
+            salvarOutput(subString, string("OPERADOR ATRIBUICAO"));
             resetaEstado(estado, subString);
 
             break;
         case 2:
             std::cout << "OPERADOR ARITMETICO\n";
             groupTokens.push_back(make_pair(Token::OPA, subString));
+            salvarOutput(subString, string("OPERADOR ARITMETICO"));
             resetaEstado(estado, subString);
             break;
         case 3:
             std::cout << subString << "PONTO E VIRGULA\n";
             groupTokens.push_back(make_pair(Token::PNTVIRGULA, subString));
+            salvarOutput(subString, string("PONTO E VIRGULA"));
             resetaEstado(estado, subString);
             break;
         case 4:
             cout << subString << "ABRE PARENTESE\n";
             groupTokens.push_back(make_pair(Token::ABRE_PARENTESE, subString));
+            salvarOutput(subString, string("ABRE PARENTESE"));
             resetaEstado(estado, subString);
             break;
         case 5:
             cout << subString << "FECHA PARENTESE\n";
             groupTokens.push_back(make_pair(Token::FECHA_PARENTESE, subString));
+            salvarOutput(subString, string("FECHA PARENTESE"));
             resetaEstado(estado, subString);
             break;
         case 6:
@@ -183,6 +196,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
         case 8:
             std::cout << subString << "OPERADOR LOGICO\n";
             groupTokens.push_back(make_pair(Token::OPB, subString));
+            salvarOutput(subString, string("OPERADOR LOGICO"));
             resetaEstado(estado, subString);
             break;
         case 9:
@@ -190,10 +204,17 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             auto token = r_words(subString);
 
             if (token != Token::ID)
+            {
                 cout << subString << ": PALAVRA RESERVADA" << '\n';
+                salvarOutput(subString, string("PALAVRA RESERVADA"));
+            }
             else
+            {
                 cout << subString << ": ID" << '\n';
+                salvarOutput(subString, string(": ID"));
+            }
             groupTokens.push_back(make_pair(token, subString));
+
             resetaEstado(estado, subString);
         }
         break;
@@ -213,6 +234,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
         case 11: // FINAL DA LEITURA DE VALOR
             std::cout << subString << ": VALOR" << '\n';
             groupTokens.push_back(make_pair(Token::VALOR, subString));
+            salvarOutput(subString, string(": VALOR"));
             resetaEstado(estado, subString);
             break;
         case 12:
@@ -228,6 +250,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             break;
         case 13:
             std::cout << subString << ": VALOR" << '\n';
+            salvarOutput(subString, string(": VALOR"));
             resetaEstado(estado, subString);
             break;
         default:
