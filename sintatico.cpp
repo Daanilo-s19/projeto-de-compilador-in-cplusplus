@@ -36,11 +36,11 @@ void syntatic(vector<pair<Token, string>> &tokens)
              {{Token::ID, 2}, {Token::TIPO, 2}, {Token::SE, 2}, {Token::ENQUANTO, 2}}},
             {Token::CMD,
              {{Token::ID, 3}, {Token::TIPO, 3}, {Token::SE, 4}, {Token::ENQUANTO, 5}}},
-            {Token::SE,
+            {Token::SE_T,
              {{Token::SE, 6}}},
-            {Token::ENQUANTO,
+            {Token::ENQUANTO_T,
              {{Token::ENQUANTO, 7}}},
-            {Token::ENTAO,
+            {Token::ENTAO_T,
              {{Token::ENTAO, 8}, {Token::ACABOU, 99}}},
             {Token::EXPRESSAO,
              {{Token::ID, 9}, {Token::VALOR, 10}, {Token::NEGACAO, 11}, {Token::ABRE_PARENTESE, 12}}},
@@ -51,7 +51,7 @@ void syntatic(vector<pair<Token, string>> &tokens)
             {Token::EXPAX,
              {{Token::OPA, 15}, {Token::OPB, 99}}},
             {Token::ATRIB,
-             {{Token::ID, 16}, {Token::TIPO, 17}}},
+             {{Token::ID, 17}, {Token::TIPO, 16}}},
 
         };
 
@@ -63,8 +63,6 @@ void syntatic(vector<pair<Token, string>> &tokens)
         auto &token = tokens[index].first;
         auto topo = pilha.top();
 
-        cout << "parser: TOKEN LIDO[" << token << "] TOPO:[" << topo << "]\n";
-        cin.get();
         if (token == topo) // HOUVE MATCH ENTRE O TOPO DA PILHA E O TOKEN LIDO
         {
             //bateu
@@ -96,11 +94,11 @@ void syntatic(vector<pair<Token, string>> &tokens)
                 salvarOutput("<cmd>->  atrib ‘;’");
                 break;
             case 4: //<cmd>->  se
-                pilha.push(Token::SE);
+                pilha.push(Token::SE_T);
                 salvarOutput("<cmd>->  se");
                 break;
             case 5: //<cmd>->  enquanto
-                pilha.push(Token::ENQUANTO);
+                pilha.push(Token::ENQUANTO_T);
                 salvarOutput("<cmd>->  enquanto");
                 break;
             case 6: //<se> -> ‘se‘ expressao ‘faça’ bloco senao  ‘acabou’
@@ -182,84 +180,9 @@ void syntatic(vector<pair<Token, string>> &tokens)
 
             default:
                 cout << "Parser: Producao nao registrada\n";
-                pilha.pop();
+
                 break;
             }
-            // switch (regra)            {
-            // case 1: //PROGRAMA ->CMD PROGRAMA
-            //     pilha.push(Token::PROGRAMA);
-            //     pilha.push(Token::CMD);
-            //     salvarOutput("PROGRAMA ->CMD PROGRAMA");
-            //     break;
-            // case 2: //BLOCO -> PROGRAMA
-            //     pilha.push(Token::PROGRAMA);
-            //     salvarOutput("BLOCO -> PROGRAMA");
-            //     break;
-            // case 3: //CMD ->  ATRIB ';'
-            //     pilha.push(Token::PNTVIRGULA);
-            //     pilha.push(Token::ATRIB);
-            //     salvarOutput("CMD ->  ATRIB ';'");
-            //     break;
-            // case 4: //SE ->‘se‘ EXPRESSAO ‘faça’ BLOCO SENAO  ‘acabou’
-            //     pilha.push(Token::ACABOU);
-            //     pilha.push(Token::ENTAO);
-            //     pilha.push(Token::BLOCO);
-            //     pilha.push(Token::FACA);
-            //     pilha.push(Token::EXPRESSAO);
-            //     pilha.push(Token::SE);
-            //     salvarOutput("SE ->‘se‘ EXPRESSAO ‘faça’ BLOCO SENAO  ‘acabou’");
-            //     break;
-            // case 5: //ENQUANTO -> ‘enquanto’  EXPRESSAO ‘faça’ BLOCO  ‘acabou’
-            //     pilha.push(Token::ACABOU);
-            //     pilha.push(Token::BLOCO);
-            //     pilha.push(Token::FACA);
-            //     pilha.push(Token::EXPRESSAO);
-            //     pilha.push(Token::ENQUANTO);
-            //     salvarOutput("ENQUANTO -> ‘enquanto’  EXPRESSAO ‘faça’ BLOCO  ‘acabou’");
-            //     break;
-            // case 6: //ENTAO ->  ATRIB ';'
-            //     pilha.push(Token::BLOCO);
-            //     pilha.push(Token::ENTAO);
-            //     salvarOutput("ENTAO ->  ATRIB ';'");
-            //     break;
-            // case 7: //EXPRESSAO ->ID EXPL
-            //     pilha.push(Token::EXPRESSAO);
-            //     pilha.push(Token::ID);
-            //     salvarOutput("EXPRESSAO ->ID EXPL");
-            //     break;
-            // case 8: //EXPRESSAO ->VALOR EXPL
-            //     pilha.push(Token::EXPRESSAO);
-            //     pilha.push(Token::VALOR);
-            //     salvarOutput("EXPRESSAO ->VALOR EXPL");
-            //     break;
-            // case 9: //EXPRESSAO ->NEGACAO
-            //     pilha.push(Token::NEGACAO);
-            //     salvarOutput("EXPRESSAO ->NEGACAO");
-            //     break;
-            // case 10: // EXPRESSAO ->(EXPRESSAO) EXPL
-            //     pilha.push(Token::EXPRESSAO);
-            //     pilha.push(Token::FECHA_PARENTESE);
-            //     pilha.push(Token::EXPRESSAO);
-            //     pilha.push(Token::ABRE_PARENTESE);
-            //     salvarOutput("EXPRESSAO ->(EXPRESSAO) EXPL");
-            //     break;
-            // case 11: // ATRIB -> TIPO ID
-            //     pilha.push(Token::ID);
-            //     pilha.push(Token::TIPO);
-            //     salvarOutput("ATRIB -> TIPO ID");
-            //     break;
-            // case 12: // ATRIB ->  ID = expressao
-            //     pilha.push(Token::EXPRESSAO);
-            //     pilha.push(Token::ATRIB);
-            //     pilha.push(Token::ID);
-            //     salvarOutput("ATRIB ->  ID = expressao");
-            //     break;
-            // default:
-            //     cout << "Parser: Producao nao registrada\n";
-            //     pilha.pop();
-
-            //     break;
-            // }
         }
     }
 }

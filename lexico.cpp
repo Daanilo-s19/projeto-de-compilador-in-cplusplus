@@ -55,6 +55,11 @@ void resetaEstado(int &estado, string &substr)
     substr.clear();
     estado = 0;
 }
+void resetaEstado(int &estado, string &substr, ifstream &file)
+{
+    resetaEstado(estado, substr);
+    file.unget();
+}
 void salvarOutput(string substr, string output) // escrita no arquivo
 {
     fs.open("OUTPUT_LEXICO.txt", std::fstream::out | std::fstream::app);
@@ -215,7 +220,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             }
             groupTokens.push_back(make_pair(token, subString));
 
-            resetaEstado(estado, subString);
+            resetaEstado(estado, subString, file);
         }
         break;
         case 10: // DEPOIS DA VIRGULA ESTADO 10  QUE ADICIONA NUMEROS
@@ -235,7 +240,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             std::cout << subString << ": VALOR" << '\n';
             groupTokens.push_back(make_pair(Token::VALOR, subString));
             salvarOutput(subString, string(": VALOR"));
-            resetaEstado(estado, subString);
+            resetaEstado(estado, subString, file);
             break;
         case 12:
             c = file.get();

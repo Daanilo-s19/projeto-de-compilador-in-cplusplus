@@ -11,15 +11,15 @@ enum Token
     OPA,
     OPB,
     PNTVIRGULA,
-    SE,
-    ENTAO,
-    ENQUANTO,
+    SE_T,
+    ENTAO_T,
+    ENQUANTO_T,
     ACABOU,
     FACA,
     NEGACAO,
     $,
 
-    // Não terminal
+    // produção
     PROGRAMA,
     PROGRAMAX,
     BLOCO,
@@ -29,6 +29,9 @@ enum Token
     EXPLX,
     EXPAX,
     EXP_LOGICA,
+    SE,
+    ENTAO,
+    ENQUANTO,
     ERRO,
 
 };
