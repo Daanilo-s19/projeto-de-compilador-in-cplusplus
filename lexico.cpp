@@ -15,9 +15,9 @@ Token r_words(const string &str)
     {
         return Token::SE;
     }
-    else if (str == "ENTAO")
+    else if (str == "SENAO")
     {
-        return Token::ENTAO;
+        return Token::SENAO;
     }
     else if (str == "FACA")
     {

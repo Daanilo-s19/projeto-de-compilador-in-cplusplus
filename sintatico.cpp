@@ -31,7 +31,7 @@ void syntatic(vector<pair<Token, string>> &tokens)
             {Token::PROGRAMA,
              {{Token::ID, 1}, {Token::TIPO, 1}, {Token::SE, 1}, {Token::ENQUANTO, 1}}},
             {Token::PROGRAMAX,
-             {{Token::ID, 1}, {Token::TIPO, 1}, {Token::SE, 1}, {Token::ENQUANTO, 1}, {Token::$, 99}, {Token::ENTAO, 99}, {Token::ACABOU, 99}}},
+             {{Token::ID, 1}, {Token::TIPO, 1}, {Token::SE, 1}, {Token::ENQUANTO, 1}, {Token::$, 99}, {Token::SENAO, 99}, {Token::ACABOU, 99}}},
             {Token::BLOCO,
              {{Token::ID, 2}, {Token::TIPO, 2}, {Token::SE, 2}, {Token::ENQUANTO, 2}}},
             {Token::CMD,
@@ -40,8 +40,8 @@ void syntatic(vector<pair<Token, string>> &tokens)
              {{Token::SE, 6}}},
             {Token::ENQUANTO_T,
              {{Token::ENQUANTO, 7}}},
-            {Token::ENTAO_T,
-             {{Token::ENTAO, 8}, {Token::ACABOU, 99}}},
+            {Token::SENAO_T,
+             {{Token::SENAO, 8}, {Token::ACABOU, 99}}},
             {Token::EXPRESSAO,
              {{Token::ID, 9}, {Token::VALOR, 10}, {Token::NEGACAO, 11}, {Token::ABRE_PARENTESE, 12}}},
             {Token::EXPL,
@@ -85,7 +85,6 @@ void syntatic(vector<pair<Token, string>> &tokens)
                 break;
             case 2: //<bloco> -> programa
                 pilha.push(Token::PROGRAMA);
-                pilha.push(Token::CMD);
                 salvarOutput("<bloco> -> programa");
                 break;
             case 3: //<cmd>->  atrib ‘;’
@@ -103,7 +102,7 @@ void syntatic(vector<pair<Token, string>> &tokens)
                 break;
             case 6: //<se> -> ‘se‘ expressao ‘faça’ bloco senao  ‘acabou’
                 pilha.push(Token::ACABOU);
-                pilha.push(Token::ENTAO);
+                pilha.push(Token::SENAO);
                 pilha.push(Token::BLOCO);
                 pilha.push(Token::FACA);
                 pilha.push(Token::EXPRESSAO);
@@ -120,7 +119,7 @@ void syntatic(vector<pair<Token, string>> &tokens)
                 break;
             case 8: //<senao> -> ‘senao’ bloco
                 pilha.push(Token::BLOCO);
-                pilha.push(Token::ENTAO);
+                pilha.push(Token::SENAO);
                 salvarOutput("<senao> -> ‘senao’ bloco");
                 break;
             case 9: //<expressao> -> id expl
