@@ -12,7 +12,7 @@ enum Token
     OPB,
     PNTVIRGULA,
     SE_T,
-    ENTAO_T,
+    SENAO_T,
     ENQUANTO_T,
     ACABOU,
     FACA,
@@ -30,7 +30,7 @@ enum Token
     EXPAX,
     EXP_LOGICA,
     SE,
-    ENTAO,
+    SENAO,
     ENQUANTO,
     ERRO,
 
