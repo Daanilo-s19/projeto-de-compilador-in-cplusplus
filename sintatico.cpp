@@ -179,6 +179,7 @@ void syntatic(vector<pair<Token, string>> &tokens)
 
             default:
                 cout << "Parser: Producao nao registrada\n";
+                throw invalid_argument("Escreve certo");
 
                 break;
             }
