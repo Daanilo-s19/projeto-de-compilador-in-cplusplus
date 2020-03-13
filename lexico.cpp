@@ -73,8 +73,9 @@ vector<pair<Token, string>> getTokens(ifstream &file)
     char c = '\0';
     string subString;
     vector<pair<Token, string>> groupTokens;
+    bool acabou = false;
 
-    while (!file.eof())
+    while (!acabou)
     {
         // cout << '{' << estado << ", " << c << "}\n";
         switch (estado)
@@ -122,6 +123,7 @@ vector<pair<Token, string>> getTokens(ifstream &file)
             case EOF:
                 cout << "acabou\n"; // FIM DE ARQ
                 groupTokens.push_back(make_pair(Token::$, ""));
+                acabou = true;
                 break;
 
             default:

@@ -102,7 +102,7 @@ void syntatic(vector<pair<Token, string>> &tokens)
                 break;
             case 6: //<se> -> ‘se‘ expressao ‘faça’ bloco senao  ‘acabou’
                 pilha.push(Token::ACABOU);
-                pilha.push(Token::SENAO);
+                pilha.push(Token::SENAO_T);
                 pilha.push(Token::BLOCO);
                 pilha.push(Token::FACA);
                 pilha.push(Token::EXPRESSAO);
